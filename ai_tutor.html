@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Travel Guide | GlobeTrotter</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="ai_tutor.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="ai-navbar">
+  <a href="index.html" class="ai-logo">Globe<span>Trotter.</span></a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="destination.html">Explore</a>
+    <a href="trip_planner.html">Plan a Trip</a>
+    <a href="hotels.html">Hotels</a>
+    <a href="ai_tutor.html" class="active">AI Travel Guide</a>
+  </nav>
+
+  <a href="login.html" class="nav-login">Login ↗</a>
+</header>
+
+<main>
+  <section class="ai-hero">
+    <div class="ai-hero-content">
+      <span class="eyebrow">✦ YOUR PERSONAL TRAVEL COMPANION</span>
+
+      <h1>Every great journey<br>starts with a <em>little inspiration.</em></h1>
+
+      <p>
+        Tell us what you love, how much you want to spend,
+        and how long you have. Get a personalized travel suggestion
+        for your next adventure.
+      </p>
+
+      <a href="#travel-assistant" class="ai-primary-btn">
+        Plan my adventure <span>↘</span>
+      </a>
+
+      <div class="ai-hero-stats">
+        <div><strong>6+</strong><small>Destinations</small></div>
+        <div><strong>3</strong><small>Travel styles</small></div>
+        <div><strong>1</strong><small>Next adventure</small></div>
+      </div>
+    </div>
+
+    <div class="ai-hero-image">
+      <div class="image-badge">
+        <span>✦</span>
+        <div>
+          <strong>Your next escape</strong>
+          <small>Starts right here</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="assistant-section" id="travel-assistant">
+    <div class="section-heading">
+      <span class="eyebrow">✦ LET'S GET TO KNOW YOU</span>
+      <h2>Where should we take you?</h2>
+      <p>Choose your preferences and discover a trip that fits your style.</p>
+    </div>
+
+    <div class="assistant-layout">
+      <form id="travelForm" class="assistant-form">
+
+        <div class="form-title">
+          <span class="form-icon">✧</span>
+          <div>
+            <h3>Your travel preferences</h3>
+            <p>A few details make all the difference.</p>
+          </div>
+        </div>
+
+        <label for="travelStyle">What kind of trip are you dreaming of?</label>
+        <select id="travelStyle" required>
+          <option value="">Choose your travel style</option>
+          <option value="nature">Nature & peaceful escapes</option>
+          <option value="adventure">Adventure & thrilling experiences</option>
+          <option value="culture">Culture, heritage & history</option>
+          <option value="food">Food, shopping & local life</option>
+          <option value="relaxation">Relaxation & beaches</option>
+        </select>
+
+        <label for="budget">What's your total budget? (₹)</label>
+        <input type="number" id="budget" min="1000" placeholder="e.g. 10000" required>
+
+        <div class="form-row">
+          <div>
+            <label for="days">Trip duration</label>
+            <select id="days" required>
+              <option value="1">1 day</option>
+              <option value="2">2 days</option>
+              <option value="3" selected>3 days</option>
+              <option value="4">4 days</option>
+              <option value="5">5 days</option>
+              <option value="7">7 days</option>
+              <option value="10">10 days</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="travellers">Travellers</label>
+            <select id="travellers" required>
+              <option value="1">Solo</option>
+              <option value="2" selected>2 people</option>
+              <option value="3">3 people</option>
+              <option value="4">4 people</option>
+              <option value="5">5 people</option>
+              <option value="6">6 people</option>
+            </select>
+          </div>
+        </div>
+
+        <label for="startingPoint">Where are you travelling from?</label>
+        <input type="text" id="startingPoint" placeholder="e.g. Solapur">
+
+        <label for="destinationPreference">Any preferred destination?</label>
+        <select id="destinationPreference">
+          <option value="any">Surprise me with a destination</option>
+          <option value="Goa">Goa</option>
+          <option value="Manali">Manali</option>
+          <option value="Jaipur">Jaipur</option>
+          <option value="Kerala">Kerala</option>
+          <option value="Mumbai">Mumbai</option>
+          <option value="Rishikesh">Rishikesh</option>
+        </select>
+
+        <button type="submit" class="generate-btn">
+          ✦ Discover my trip <span>→</span>
+        </button>
+
+        <p class="form-note">Your preferences stay in this browser. No account required.</p>
+      </form>
+
+      <div class="result-panel" id="resultPanel">
+        <div class="result-empty" id="emptyState">
+          <div class="empty-illustration">✈</div>
+          <span class="eyebrow">YOUR ADVENTURE AWAITS</span>
+          <h3>A world of possibilities.</h3>
+          <p>
+            Your next favourite place might be closer than you think.
+            Fill in your preferences and let us find a trip idea for you.
+          </p>
+
+          <div class="suggestion-tags">
+            <span>🌿 Nature</span>
+            <span>🏔 Adventure</span>
+            <span>🏛 Culture</span>
+            <span>🌊 Beaches</span>
+          </div>
+        </div>
+
+        <div id="tripResult" class="trip-result" hidden>
+          <span class="eyebrow">✦ YOUR SUGGESTED GETAWAY</span>
+          <h2 id="resultDestination"></h2>
+          <p id="resultDescription"></p>
+
+          <div class="result-meta">
+            <div><small>Duration</small><strong id="resultDays"></strong></div>
+            <div><small>Travellers</small><strong id="resultTravellers"></strong></div>
+            <div><small>Est. budget</small><strong id="resultBudget"></strong></div>
+          </div>
+
+          <h3 class="itinerary-title">Your trip highlights</h3>
+          <div id="activityList" class="activity-list"></div>
+
+          <div class="budget-breakdown">
+            <h3>Estimated budget breakdown</h3>
+            <div class="budget-line"><span>Stay</span><strong id="stayCost"></strong></div>
+            <div class="budget-line"><span>Food</span><strong id="foodCost"></strong></div>
+            <div class="budget-line"><span>Local transport</span><strong id="transportCost"></strong></div>
+            <div class="budget-line"><span>Activities</span><strong id="activityCost"></strong></div>
+            <div class="budget-line budget-total"><span>Estimated total</span><strong id="totalCost"></strong></div>
+          </div>
+
+          <p class="result-disclaimer">
+            Planning estimate only. Actual prices depend on dates, transport,
+            accommodation and availability.
+          </p>
+
+          <div class="result-actions">
+            <button type="button" id="saveSuggestion" class="generate-btn">Save trip ♡</button>
+            <a href="trip_planner.html" id="openPlanner" class="outline-btn">Open trip planner →</a>
+          </div>
+
+          <p id="saveMessage" class="save-message" role="status"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="travel-tips">
+    <div class="section-heading">
+      <span class="eyebrow">✦ TRAVEL A LITTLE SMARTER</span>
+      <h2>Small tips, better journeys.</h2>
+    </div>
+
+    <div class="tips-grid">
+      <article class="tip-card">
+        <span>01</span>
+        <div class="tip-icon">💰</div>
+        <h3>Set a realistic budget</h3>
+        <p>Keep room for meals, local transport, entry fees and unexpected expenses.</p>
+      </article>
+
+      <article class="tip-card">
+        <span>02</span>
+        <div class="tip-icon">🗓️</div>
+        <h3>Plan, but stay flexible</h3>
+        <p>Choose a few must-see places and leave time for spontaneous discoveries.</p>
+      </article>
+
+      <article class="tip-card">
+        <span>03</span>
+        <div class="tip-icon">🎒</div>
+        <h3>Pack for the destination</h3>
+        <p>Check the season, weather, local customs and activities before you leave.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="ai-footer">
+  <a href="index.html" class="ai-logo">Globe<span>Trotter.</span></a>
+  <p>Thoughtful journeys. Unforgettable stories.</p>
+  <div>
+    <a href="destination.html">Destinations</a>
+    <a href="trip_planner.html">Trip Planner</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <small>© 2026 GlobeTrotter. Made for curious travellers.</small>
+</footer>
+
+<script src="ai_tutor.js"></script>
+</body>
+</html>

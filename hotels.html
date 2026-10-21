@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotels & Nearby Places | GlobeTrotter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hotels.css">
+</head>
+<body>
+
+<header class="navbar">
+    <a href="index.html" class="logo">✦ GlobeTrotter</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destination.html">Explore</a>
+        <a href="trip_planner.html">Plan a Trip</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="ai_tutor.html">AI Travel Guide</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="hotel-hero">
+    <span class="hotel-eyebrow">STAY SOMEWHERE SPECIAL</span>
+    <h1>Find your perfect <span>stay.</span></h1>
+    <p>Explore stays and nearby attractions that fit your destination,
+       travel style and budget.</p>
+
+    <form id="hotelSearch" class="hotel-search">
+        <div class="search-field">
+            <label for="hotelDestination">Destination</label>
+            <select id="hotelDestination">
+                <option value="all">All destinations</option>
+                <option value="Goa">Goa</option>
+                <option value="Manali">Manali</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Rishikesh">Rishikesh</option>
+            </select>
+        </div>
+
+        <div class="search-field">
+            <label for="maxPrice">Maximum price per night</label>
+            <select id="maxPrice">
+                <option value="all">Any price</option>
+                <option value="2000">Up to ₹2,000</option>
+                <option value="4000">Up to ₹4,000</option>
+                <option value="6000">Up to ₹6,000</option>
+            </select>
+        </div>
+
+        <button type="submit" class="hotel-search-btn">Find stays →</button>
+    </form>
+</section>
+
+<main class="hotel-container">
+
+    <section class="hotel-section">
+        <div class="hotel-section-heading">
+            <div>
+                <span class="hotel-eyebrow dark">HANDPICKED FOR YOU</span>
+                <h2>Places to stay</h2>
+                <p>Sample accommodation listings to help plan your trip.</p>
+            </div>
+            <span class="listing-count" id="listingCount">6 stays</span>
+        </div>
+
+        <div class="hotel-grid" id="hotelGrid">
+
+            <article class="hotel-card" data-destination="Goa" data-price="1800">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=900&q=80"
+                     alt="Tropical resort with swimming pool" loading="lazy">
+                <div class="hotel-content">
+                    <span class="stay-type">BUDGET STAY</span>
+                    <h3>Coastal Comfort Stay</h3>
+                    <p class="hotel-location">📍 Goa · Near the beach</p>
+                    <p class="hotel-description">A relaxed stay for travellers exploring the coast.</p>
+                    <div class="hotel-card-bottom">
+                        <div><strong>₹1,800</strong><span>/ night · sample price</span></div>
+                        <span class="hotel-rating">★ 4.3</span>
+                    </div>
+                    <a href="trip_planner.html?destination=Goa" class="stay-button">Plan this stay →</a>
+                </div>
+            </article>
+
+            <article class="hotel-card" data-destination="Manali" data-price="2500">
+                <img src="https://images.unsplash.com/photo-1518732714860-b62714ce0c59?auto=format&fit=crop&w=900&q=80"
+                     alt="Mountain accommodation surrounded by nature" loading="lazy">
+                <div class="hotel-content">
+                    <span class="stay-type">MOUNTAIN ESCAPE</span>
+                    <h3>Pine Valley Retreat</h3>
+                    <p class="hotel-location">📍 Manali · Mountain views</p>
+                    <p class="hotel-description">A cosy-style mountain stay for nature lovers.</p>
+                    <div class="hotel-card-bottom">
+                        <div><strong>₹2,500</strong><span>/ night · sample price</span></div>
+                        <span class="hotel-rating">★ 4.5</span>
+                    </div>
+                    <a href="trip_planner.html?destination=Manali" class="stay-button">Plan this stay →</a>
+                </div>
+            </article>
+
+            <article class="hotel-card" data-destination="Jaipur" data-price="1500">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80"
+                     alt="Comfortable hotel bedroom" loading="lazy">
+                <div class="hotel-content">
+                    <span class="stay-type">CITY BREAK</span>
+                    <h3>Pink City Guesthouse</h3>
+                    <p class="hotel-location">📍 Jaipur · Heritage district</p>
+                    <p class="hotel-description">A simple base for exploring forts and local markets.</p>
+                    <div class="hotel-card-bottom">
+                        <div><strong>₹1,500</strong><span>/ night · sample price</span></div>
+                        <span class="hotel-rating">★ 4.2</span>
+                    </div>
+                    <a href="trip_planner.html?destination=Jaipur" class="stay-button">Plan this stay →</a>
+                </div>
+            </article>
+
+            <article class="hotel-card" data-destination="Kerala" data-price="3500">
+                <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80"
+                     alt="Green Kerala landscape" loading="lazy">
+                <div class="hotel-content">
+                    <span class="stay-type">NATURE RETREAT</span>
+                    <h3>Green Haven Retreat</h3>
+                    <p class="hotel-location">📍 Kerala · Green surroundings</p>
+                    <p class="hotel-description">A nature-inspired base for exploring Kerala's landscapes.</p>
+                    <div class="hotel-card-bottom">
+                        <div><strong>₹3,500</strong><span>/ night · sample price</span></div>
+                        <span class="hotel-rating">★ 4.6</span>
+                    </div>
+                    <a href="trip_planner.html?destination=Kerala" class="stay-button">Plan this stay →</a>
+                </div>
+            </article>
+
+            <article class="hotel-card" data-destination="Mumbai" data-price="2800">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
+                     alt="Modern hotel with a swimming pool" loading="lazy">
+                <div class="hotel-content">
+                    <span class="stay-type">CITY COMFORT</span>
+                    <h3>Urban Nest</h3>
+                    <p class="hotel-location">📍 Mumbai · City stay</p>
+                    <p class="hotel-description">A sample city accommodation option for urban explorers.</p>
+                    <div class="hotel-card-bottom">
+                        <div><strong>₹2,800</strong><span>/ night · sample price</span></div>
+                        <span class="hotel-rating">★ 4.1</span>
+                    </div>
+                    <a href="trip_planner.html?destination=Mumbai" class="stay-button">Plan this stay →</a>
+                </div>
+            </article>
+
+            <article class="hotel-card" data-destination="Rishikesh" data-price="1200">
+                <img src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&fit=crop&w=900&q=80"
+                     alt="Peaceful accommodation surrounded by greenery" loading="lazy">
+                <div class="hotel-content">
+                    <span class="stay-type">PEACEFUL GETAWAY</span>
+                    <h3>Riverstone Guest Stay</h3>
+                    <p class="hotel-location">📍 Rishikesh · Nature escape</p>
+                    <p class="hotel-description">A sample budget stay for a relaxed trip.</p>
+                    <div class="hotel-card-bottom">
+                        <div><strong>₹1,200</strong><span>/ night · sample price</span></div>
+                        <span class="hotel-rating">★ 4.4</span>
+                    </div>
+                    <a href="trip_planner.html?destination=Rishikesh" class="stay-button">Plan this stay →</a>
+                </div>
+            </article>
+
+            <p id="noHotels" class="no-hotels" hidden>
+                No stays match your filters. Try another destination or price.
+            </p>
+        </div>
+    </section>
+
+    <section class="nearby-section">
+        <div>
+            <span class="hotel-eyebrow dark">EXPLORE BEYOND YOUR STAY</span>
+            <h2>Discover nearby experiences</h2>
+            <p>Choose a destination to see example attractions to add to your journey.</p>
+        </div>
+
+        <div class="nearby-controls">
+            <label for="nearbyDestination">Choose destination</label>
+            <select id="nearbyDestination">
+                <option value="Goa">Goa</option>
+                <option value="Manali">Manali</option>
+                <option value="Jaipur">Jaipur</option>
+                <option value="Kerala">Kerala</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Rishikesh">Rishikesh</option>
+            </select>
+        </div>
+
+        <div class="nearby-list" id="nearbyList" aria-live="polite"></div>
+        <p class="nearby-note">These are suggested attractions, not verified nearby-to-hotel distances. Check routes and opening hours before travelling.</p>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <p>© <span id="currentYear"></span> GlobeTrotter. Discover more, travel better.</p>
+    <a href="contact.html">Get in Touch</a>
+</footer>
+
+<script src="hotels.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Trips | GlobeTrotter</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="my_trips.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="trips-nav">
+    <a href="index.html" class="brand">Globe<span>Trotter.</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destination.html">Explore</a>
+        <a href="trip_planner.html">Plan a Trip</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="dashboard.html">Dashboard</a>
+    </nav>
+</header>
+
+<main class="my-trips-container">
+
+    <section class="trips-hero">
+        <div>
+            <p class="eyebrow">YOUR TRAVEL COLLECTION</p>
+            <h1>Every trip tells a story.</h1>
+            <p>All your planned adventures, organised in one place.</p>
+        </div>
+
+        <a href="trip_planner.html" class="primary-btn">+ Create New Trip</a>
+    </section>
+
+    <section class="trips-summary">
+        <div class="summary-card">
+            <span>🧳</span>
+            <div>
+                <p>Total Saved Trips</p>
+                <h2 id="tripCount">0</h2>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <span>📍</span>
+            <div>
+                <p>Unique Destinations</p>
+                <h2 id="destinationCount">0</h2>
+            </div>
+        </div>
+
+        <div class="summary-card">
+            <span>💰</span>
+            <div>
+                <p>Combined Planned Budget</p>
+                <h2 id="totalBudget">₹0</h2>
+            </div>
+        </div>
+    </section>
+
+    <section class="trips-list-section">
+        <div class="trips-heading">
+            <div>
+                <p class="eyebrow">READY WHEN YOU ARE</p>
+                <h2>My Saved Itineraries</h2>
+            </div>
+
+            <select id="sortTrips" aria-label="Sort trips">
+                <option value="recent">Most Recent</option>
+                <option value="budget-low">Budget: Low to High</option>
+                <option value="budget-high">Budget: High to Low</option>
+                <option value="days">Duration: Short to Long</option>
+            </select>
+        </div>
+
+        <div id="tripsList" class="trips-grid"></div>
+
+        <div id="emptyTrips" class="empty-trips">
+            <div class="empty-illustration">🌍</div>
+            <h2>No trips saved yet</h2>
+            <p>Your next adventure is waiting. Plan a trip and it will appear here.</p>
+            <a href="trip_planner.html" class="primary-btn">Plan My First Trip</a>
+        </div>
+    </section>
+
+</main>
+
+<footer class="trips-footer">
+    <p>© 2026 GlobeTrotter. Made for curious travellers.</p>
+    <a href="contact.html">Contact Us</a>
+</footer>
+
+<script src="my_trips.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | GlobeTrotter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="login.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+
+  <header class="login-nav">
+    <a href="index.html" class="login-logo">Globe<span>Trotter.</span></a>
+    <a href="index.html" class="back-home">← Back to home</a>
+  </header>
+
+  <main class="login-main">
+    <section class="login-visual">
+      <span class="login-eyebrow">✦ YOUR NEXT CHAPTER STARTS HERE</span>
+      <h1>The world is waiting.<br><em>Let's get you there.</em></h1>
+      <p>Sign in to organise your journeys, revisit your saved trips and keep your travel plans together.</p>
+
+      <div class="login-photo">
+        <div class="login-photo-label">
+          <span>✧</span>
+          <div>
+            <strong>Collect moments, not just miles.</strong>
+            <small>Your journeys, all in one place.</small>
+          </div>
+        </div>
+      </div>
+
+      <div class="login-quote">
+        “Travel makes room for stories you haven't lived yet.”
+      </div>
+    </section>
+
+    <section class="login-card">
+      <div class="login-card-top">
+        <div class="login-symbol">✦</div>
+        <span class="login-eyebrow">WELCOME BACK</span>
+        <h2>Sign in to GlobeTrotter</h2>
+        <p>Your next adventure is just around the corner.</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="login-field">
+          <label for="loginEmail">Email address</label>
+          <input type="email" id="loginEmail" name="email" placeholder="you@example.com" autocomplete="email" required maxlength="120">
+        </div>
+
+        <div class="login-field">
+          <div class="password-label">
+            <label for="loginPassword">Password</label>
+            <a href="#" id="forgotPassword">Forgot password?</a>
+          </div>
+          <div class="password-wrap">
+            <input type="password" id="loginPassword" name="password" placeholder="Enter your password" autocomplete="current-password" required maxlength="128">
+            <button type="button" id="togglePassword" class="password-toggle" aria-label="Show password">Show</button>
+          </div>
+        </div>
+
+        <label class="remember-row">
+          <input type="checkbox" id="rememberMe">
+          <span>Remember me on this device</span>
+        </label>
+
+        <button type="submit" class="login-submit">Sign in <span>→</span></button>
+        <p id="loginStatus" class="login-status" role="status" aria-live="polite"></p>
+      </form>
+
+      <div class="login-divider"><span>NEW TO GLOBETROTTER?</span></div>
+
+      <a href="register.html" class="register-link">Create an account <span>↗</span></a>
+
+      <p class="login-terms">
+        By continuing, you agree to our project demo's terms and privacy notice.
+      </p>
+    </section>
+  </main>
+
+  <footer class="login-footer">
+    <a href="index.html">GlobeTrotter.</a>
+    <span>Thoughtful journeys. Unforgettable stories.</span>
+    <small>© 2026 GlobeTrotter</small>
+  </footer>
+
+  <script src="login.js"></script>
+</body>
+</html>

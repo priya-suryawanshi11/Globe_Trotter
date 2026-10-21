@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | GlobeTrotter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="dashboard-nav">
+    <a href="index.html" class="brand">Globe<span>Trotter.</span></a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destination.html">Explore</a>
+        <a href="trip_planner.html">Plan a Trip</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="my_trips.html">My Trips</a>
+    </nav>
+
+    <a href="login.html" class="logout-btn" id="logoutBtn">Log Out</a>
+</header>
+
+<main class="dashboard-container">
+
+    <section class="welcome-section">
+        <div>
+            <p class="eyebrow">YOUR TRAVEL SPACE</p>
+            <h1>Welcome back, <span id="userName">Traveller</span>!</h1>
+            <p>Every journey begins with a little planning. Where will you go next?</p>
+        </div>
+
+        <a href="trip_planner.html" class="primary-btn">+ Plan New Trip</a>
+    </section>
+
+    <section class="dashboard-stats">
+        <article class="stat-card">
+            <div class="stat-icon">✈️</div>
+            <p>Total Trips Saved</p>
+            <h2 id="totalTrips">0</h2>
+            <span>Your travel plans</span>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon">📍</div>
+            <p>Destinations Planned</p>
+            <h2 id="totalDestinations">0</h2>
+            <span>Unique places</span>
+        </article>
+
+        <article class="stat-card">
+            <div class="stat-icon">🗓️</div>
+            <p>Total Travel Days</p>
+            <h2 id="totalDays">0</h2>
+            <span>Across saved trips</span>
+        </article>
+    </section>
+
+    <section class="dashboard-content">
+
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">YOUR JOURNEY</p>
+                <h2>Recently Saved Trips</h2>
+            </div>
+            <a href="my_trips.html" class="text-link">View All →</a>
+        </div>
+
+        <div id="recentTrips" class="recent-trips">
+            <!-- Trips are displayed by dashboard.js -->
+        </div>
+
+        <div id="emptyTrips" class="empty-state">
+            <div class="empty-icon">🧳</div>
+            <h3>Your next adventure starts here</h3>
+            <p>You haven't saved any trips yet. Create your first itinerary and start exploring.</p>
+            <a href="trip_planner.html" class="primary-btn">Plan Your First Trip</a>
+        </div>
+
+    </section>
+
+    <section class="quick-actions-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">MAKE IT HAPPEN</p>
+                <h2>Quick Actions</h2>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <a href="destination.html" class="action-card">
+                <span>🌍</span>
+                <h3>Explore Destinations</h3>
+                <p>Find your next favourite place.</p>
+                <b>Explore →</b>
+            </a>
+
+            <a href="trip_planner.html" class="action-card">
+                <span>🗺️</span>
+                <h3>Plan an Itinerary</h3>
+                <p>Organise your trip day by day.</p>
+                <b>Start Planning →</b>
+            </a>
+
+            <a href="hotels.html" class="action-card">
+                <span>🏨</span>
+                <h3>Hotels & Nearby Places</h3>
+                <p>Browse sample stays and attractions.</p>
+                <b>Discover →</b>
+            </a>
+
+            <a href="ai_tutor.html" class="action-card">
+                <span>✨</span>
+                <h3>AI Travel Guide</h3>
+                <p>Get a sample personalised itinerary.</p>
+                <b>Get Ideas →</b>
+            </a>
+        </div>
+    </section>
+
+    <section class="dashboard-banner">
+        <div>
+            <p class="eyebrow">YOUR NEXT CHAPTER</p>
+            <h2>Collect moments, not just miles.</h2>
+            <p>Discover a new destination and turn your travel dreams into a plan.</p>
+            <a href="destination.html" class="banner-btn">Explore the World →</a>
+        </div>
+        <div class="banner-emoji">🌄</div>
+    </section>
+
+</main>
+
+<footer class="dashboard-footer">
+    <p>© 2026 GlobeTrotter. Made for curious travellers.</p>
+    <div>
+        <a href="contact.html">Contact</a>
+        <a href="index.html">Home</a>
+    </div>
+</footer>
+
+<script src="dashboard.js"></script>
+</body>
+</html>

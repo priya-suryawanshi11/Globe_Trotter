@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Trip Planner | GlobeTrotter</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="trip_planner.css">
+</head>
+
+<body>
+<header class="navbar">
+    <a href="index.html" class="logo">✦ GlobeTrotter</a>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="destination.html">Explore</a>
+        <a href="trip_planner.html">Plan a Trip</a>
+        <a href="hotels.html">Hotels</a>
+        <a href="login.html">Login</a>
+    </nav>
+</header>
+
+<section class="planner-hero">
+    <span class="eyebrow">YOUR JOURNEY, YOUR WAY</span>
+    <h1>Plan less. <span>Explore more.</span></h1>
+    <p>Create a personalised travel plan based on your destination,
+       budget, trip duration and favourite activities.</p>
+</section>
+
+<main class="planner-container">
+    <section class="planner-form-card">
+        <div class="section-heading">
+            <span class="step-label">01 — YOUR PREFERENCES</span>
+            <h2>Design your getaway</h2>
+            <p>Tell us a little about the trip you have in mind.</p>
+        </div>
+
+        <form id="tripForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <select id="destination" required>
+                        <option value="">Choose a destination</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Manali">Manali</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Kerala">Kerala</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Rishikesh">Rishikesh</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="days">Duration (days)</label>
+                    <input type="number" id="days" min="1" max="14"
+                           value="3" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Total budget (₹)</label>
+                    <input type="number" id="budget" min="500"
+                           step="500" placeholder="e.g. 8000" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="travellers">Number of travellers</label>
+                    <input type="number" id="travellers" min="1"
+                           max="20" value="2" required>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="interest">Your travel style</label>
+                    <select id="interest" required>
+                        <option value="">Choose your interest</option>
+                        <option value="nature">Nature & scenic views</option>
+                        <option value="adventure">Adventure & activities</option>
+                        <option value="culture">History & culture</option>
+                        <option value="food">Local food & shopping</option>
+                        <option value="relaxation">Relaxation & peaceful places</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" class="generate-button">
+                Generate My Itinerary <span>→</span>
+            </button>
+            <p class="form-note">Your plan is a suggested itinerary.
+               Confirm prices, transport and opening hours before travelling.</p>
+        </form>
+    </section>
+
+    <section class="result-section" id="resultSection" hidden>
+        <div class="result-heading">
+            <span class="step-label">02 — YOUR TRAVEL BLUEPRINT</span>
+            <h2 id="resultTitle">Your trip itinerary</h2>
+            <p id="resultSummary"></p>
+        </div>
+
+        <div class="budget-summary" id="budgetSummary"></div>
+
+        <div id="itinerary" class="itinerary-list"></div>
+
+        <div class="result-actions">
+            <button type="button" id="saveTrip" class="generate-button">
+                Save Trip
+            </button>
+            <button type="button" id="printTrip" class="outline-button">
+                Print Itinerary
+            </button>
+        </div>
+        <p id="saveMessage" class="save-message" role="status"></p>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>© <span id="currentYear"></span> GlobeTrotter. Discover more, travel better.</p>
+    <a href="contact.html">Get in Touch</a>
+</footer>
+
+<script src="trip_planner.js"></script>
+</body>
+</html>

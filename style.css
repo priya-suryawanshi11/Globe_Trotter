@@ -1,0 +1,206 @@
+
+/* =====================================
+   GlobeTrotter - Global Styles
+   File: public/style.css
+   ===================================== */
+
+/* 1. Theme colors */
+:root {
+    --primary: #176b5b;
+    --primary-dark: #105044;
+    --accent: #e8b66d;
+    --background: #fbfaf7;
+    --surface: #ffffff;
+    --text: #24332f;
+    --muted: #718079;
+    --border: #e5e9e4;
+    --radius: 14px;
+    --shadow: 0 8px 24px rgba(28, 55, 45, 0.08);
+}
+
+/* 2. Basic reset */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: "DM Sans", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary-dark);
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--text);
+    line-height: 1.25;
+}
+
+h1,
+h2 {
+    font-family: "Playfair Display", Georgia, serif;
+}
+
+p {
+    margin-top: 0;
+}
+
+::selection {
+    background: #d4e9df;
+    color: var(--text);
+}
+
+/* 3. Consistent form controls */
+input,
+select,
+textarea {
+    max-width: 100%;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]),
+select,
+textarea {
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 10px 12px;
+    background: var(--surface);
+    color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid rgba(23, 107, 91, 0.25);
+    outline-offset: 3px;
+}
+
+/* 4. Reusable buttons */
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 22px;
+    border: 1px solid var(--primary);
+    border-radius: 9px;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* 5. Shared navigation and branding */
+.brand {
+    color: var(--text);
+    font-size: 1.45rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.brand span {
+    color: var(--primary);
+}
+
+nav a {
+    transition: color 0.2s ease;
+}
+
+/* 6. Reusable cards */
+.summary-card,
+.saved-trip-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+/* 7. Footer */
+footer {
+    color: var(--muted);
+}
+
+/* 8. Responsive layout helpers */
+.container {
+    width: min(1120px, 92%);
+    margin-inline: auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 7vw, 3rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 5vw, 2.2rem);
+    }
+
+    .primary-btn {
+        max-width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

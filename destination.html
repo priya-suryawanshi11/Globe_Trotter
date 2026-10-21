@@ -1,0 +1,400 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Destinations | GlobeTrotter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="destination.css">
+
+    <style>
+        .destination-hero {
+            padding: 75px 8% 55px;
+            text-align: center;
+            background: linear-gradient(135deg, #092f2b, #124a40);
+            color: white;
+        }
+
+        .destination-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin: 15px 0;
+        }
+
+        .destination-hero p {
+            color: #d2e9df;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .destination-container {
+            padding: 45px 8% 80px;
+            background: var(--cream, #faf8f1);
+        }
+
+        .destination-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .destination-search,
+        .destination-filter {
+            padding: 13px 16px;
+            border: 1px solid #dce5dd;
+            border-radius: 12px;
+            background: white;
+            font: inherit;
+            outline-color: #70e1b6;
+        }
+
+        .destination-search {
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .destination-filter {
+            min-width: 180px;
+        }
+
+        .destination-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 25px;
+        }
+
+        .destination-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid #e4eae3;
+            box-shadow: 0 10px 30px rgba(9, 47, 43, .06);
+            transition: transform .25s, box-shadow .25s;
+        }
+
+        .destination-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 38px rgba(9, 47, 43, .13);
+        }
+
+        .destination-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .destination-content {
+            padding: 22px;
+        }
+
+        .destination-tag {
+            display: inline-block;
+            color: #17614d;
+            background: #e2f8ec;
+            border-radius: 30px;
+            padding: 6px 11px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .destination-content h2 {
+            color: #092f2b;
+            margin: 14px 0 8px;
+            font-size: 23px;
+        }
+
+        .destination-content p {
+            color: #788980;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .destination-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin: 18px 0;
+            padding-top: 15px;
+            border-top: 1px solid #edf0eb;
+            color: #52675e;
+            font-size: 13px;
+        }
+
+        .plan-button {
+            display: block;
+            text-align: center;
+            background: #092f2b;
+            color: white;
+            padding: 13px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background .2s;
+        }
+
+        .plan-button:hover {
+            background: #17614d;
+        }
+
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: 35px;
+            color: #788980;
+            grid-column: 1 / -1;
+        }
+
+        @media (max-width: 1000px) {
+            .destination-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .destination-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .destination-container {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .destination-card img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">✦ GlobeTrotter</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="destination.html">Explore</a>
+            <a href="trip_planner.html">Plan a Trip</a>
+            <a href="hotels.html">Hotels</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <section class="destination-hero">
+        <span class="destination-tag">YOUR NEXT ADVENTURE</span>
+        <h1>Explore Incredible India.</h1>
+        <p>
+            From peaceful mountains to tropical beaches, discover places
+            that match your travel style and budget.
+        </p>
+    </section>
+
+    <main class="destination-container">
+
+        <div class="destination-toolbar">
+            <input
+                type="search"
+                id="searchDestination"
+                class="destination-search"
+                placeholder="Search destinations..."
+                aria-label="Search destinations"
+            >
+
+            <select id="budgetFilter" class="destination-filter"
+                    aria-label="Filter by estimated budget">
+                <option value="all">All budgets</option>
+                <option value="budget">Under ₹5,000</option>
+                <option value="medium">₹5,000–₹10,000</option>
+                <option value="premium">Above ₹10,000</option>
+            </select>
+        </div>
+
+        <div class="destination-grid" id="destinationGrid">
+
+            <article class="destination-card"
+                     data-name="Goa beach adventure"
+                     data-budget="medium">
+                <img
+                    src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80"
+                    alt="Goa beach"
+                    loading="lazy"
+                >
+                <div class="destination-content">
+                    <span class="destination-tag">BEACH & RELAXATION</span>
+                    <h2>Goa</h2>
+                    <p>Enjoy beautiful beaches, coastal sunsets, local food and exciting water activities.</p>
+                    <div class="destination-meta">
+                        <span>📍 Western India</span>
+                        <span>💰 ₹5k–₹10k</span>
+                    </div>
+                    <a class="plan-button" href="trip_planner.html?destination=Goa">
+                        Plan a Goa Trip →
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card"
+                     data-name="Manali mountains nature"
+                     data-budget="medium">
+                <img
+                    src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=80"
+                    alt="Manali mountain landscape"
+                    loading="lazy"
+                >
+                <div class="destination-content">
+                    <span class="destination-tag">MOUNTAINS & NATURE</span>
+                    <h2>Manali</h2>
+                    <p>Experience mountain views, scenic valleys, adventure sports and cool weather.</p>
+                    <div class="destination-meta">
+                        <span>📍 Himachal Pradesh</span>
+                        <span>💰 ₹5k–₹10k</span>
+                    </div>
+                    <a class="plan-button" href="trip_planner.html?destination=Manali">
+                        Plan a Manali Trip →
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card"
+                     data-name="Jaipur heritage culture"
+                     data-budget="budget">
+                <img
+                    src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&w=900&q=80"
+                    alt="Jaipur heritage architecture"
+                    loading="lazy"
+                >
+                <div class="destination-content">
+                    <span class="destination-tag">HERITAGE & CULTURE</span>
+                    <h2>Jaipur</h2>
+                    <p>Explore royal palaces, colourful markets, historic forts and Rajasthani cuisine.</p>
+                    <div class="destination-meta">
+                        <span>📍 Rajasthan</span>
+                        <span>💰 Under ₹5k</span>
+                    </div>
+                    <a class="plan-button" href="trip_planner.html?destination=Jaipur">
+                        Plan a Jaipur Trip →
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card"
+                     data-name="Kerala backwaters greenery"
+                     data-budget="premium">
+                <img
+                    src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=80"
+                    alt="Kerala green landscape and backwaters"
+                    loading="lazy"
+                >
+                <div class="destination-content">
+                    <span class="destination-tag">GREEN ESCAPES</span>
+                    <h2>Kerala</h2>
+                    <p>Discover peaceful backwaters, lush greenery, tea gardens and relaxing stays.</p>
+                    <div class="destination-meta">
+                        <span>📍 Southern India</span>
+                        <span>💰 Above ₹10k</span>
+                    </div>
+                    <a class="plan-button" href="trip_planner.html?destination=Kerala">
+                        Plan a Kerala Trip →
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card"
+                     data-name="Mumbai city food culture"
+                     data-budget="budget">
+                <img
+                    src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=900&q=80"
+                    alt="Mumbai city skyline"
+                    loading="lazy"
+                >
+                <div class="destination-content">
+                    <span class="destination-tag">CITY & FOOD</span>
+                    <h2>Mumbai</h2>
+                    <p>Explore the Gateway of India, seaside promenades, city landmarks and street food.</p>
+                    <div class="destination-meta">
+                        <span>📍 Maharashtra</span>
+                        <span>💰 Under ₹5k</span>
+                    </div>
+                    <a class="plan-button" href="trip_planner.html?destination=Mumbai">
+                        Plan a Mumbai Trip →
+                    </a>
+                </div>
+            </article>
+
+            <article class="destination-card"
+                     data-name="Rishikesh river adventure"
+                     data-budget="budget">
+                <img
+                    src="https://images.unsplash.com/photo-1609948543911-7f01ff385be7?auto=format&fit=crop&w=900&q=80"
+                    alt="Rishikesh river and mountains"
+                    loading="lazy"
+                >
+                <div class="destination-content">
+                    <span class="destination-tag">ADVENTURE & PEACE</span>
+                    <h2>Rishikesh</h2>
+                    <p>Enjoy riverside views, yoga retreats, nature walks and outdoor adventures.</p>
+                    <div class="destination-meta">
+                        <span>📍 Uttarakhand</span>
+                        <span>💰 Under ₹5k</span>
+                    </div>
+                    <a class="plan-button" href="trip_planner.html?destination=Rishikesh">
+                        Plan a Rishikesh Trip →
+                    </a>
+                </div>
+            </article>
+
+            <p class="no-results" id="noResults">
+                No destinations match your search. Try another destination or budget.
+            </p>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="currentYear"></span> GlobeTrotter. Discover more, travel better.</p>
+        <a href="contact.html">Get in Touch</a>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById("searchDestination");
+        const budgetFilter = document.getElementById("budgetFilter");
+        const cards = document.querySelectorAll(".destination-card");
+        const noResults = document.getElementById("noResults");
+
+        function filterDestinations() {
+            const searchText = searchInput.value.toLowerCase().trim();
+            const selectedBudget = budgetFilter.value;
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = card.dataset.name.toLowerCase();
+                const budget = card.dataset.budget;
+
+                const matchesSearch = name.includes(searchText);
+                const matchesBudget =
+                    selectedBudget === "all" || budget === selectedBudget;
+
+                const visible = matchesSearch && matchesBudget;
+                card.style.display = visible ? "" : "none";
+
+                if (visible) visibleCount++;
+            });
+
+            noResults.style.display = visibleCount === 0 ? "block" : "none";
+        }
+
+        searchInput.addEventListener("input", filterDestinations);
+        budgetFilter.addEventListener("change", filterDestinations);
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+
+</body>
+</html>

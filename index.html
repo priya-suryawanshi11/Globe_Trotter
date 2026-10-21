@@ -1,0 +1,590 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GlobeTrotter | Explore Beyond</title>
+    <meta name="description" content="Discover destinations, plan personalized trips, explore budget-friendly stays, and organize your adventures with GlobeTrotter.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="navbar" id="home">
+
+    <a href="index.html" class="logo">
+        ✦ Globe<span>Trotter</span>
+    </a>
+
+    <nav aria-label="Main navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="destination.html">Explore</a>
+        <a href="trip_planner.html">Plan a Trip</a>
+        <a href="hotels.html">Hotels & Spots</a>
+        <a href="ai_tutor.html">AI Tutor</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+        <a href="login.html" class="login-link">Log In</a>
+        <a href="register.html" class="nav-btn">Sign Up ↗</a>
+    </div>
+
+</header>
+
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="eyebrow">YOUR NEXT ADVENTURE</p>
+
+        <h1>
+            Go beyond.<br>
+            <span>Find yourself.</span>
+        </h1>
+
+        <p class="hero-description">
+            Discover beautiful places, create your own itinerary,
+            find budget-friendly stays, and travel the world your way.
+        </p>
+
+        <div class="hero-actions">
+            <a href="trip_planner.html" class="primary-btn">
+                Plan Your Journey ↗
+            </a>
+
+            <a href="destination.html" class="secondary-btn">
+                Explore Destinations
+            </a>
+        </div>
+
+        <div class="hero-stats">
+            <div>
+                <strong>01</strong>
+                <small>Choose a destination</small>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <small>Build your itinerary</small>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <small>Make memories</small>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero-caption">
+        <span>✳</span>
+        <p>Collect moments,<br>not things.</p>
+    </div>
+
+</section>
+
+
+<!-- ================= FEATURE STRIP ================= -->
+
+<section class="feature-strip" aria-label="GlobeTrotter features">
+
+    <div>
+        <span>✈</span>
+        <strong>Personalised Trips</strong>
+    </div>
+
+    <div>
+        <span>◈</span>
+        <strong>Budget Friendly</strong>
+    </div>
+
+    <div>
+        <span>♧</span>
+        <strong>Nearby Attractions</strong>
+    </div>
+
+    <div>
+        <span>◎</span>
+        <strong>Travel Your Way</strong>
+    </div>
+
+</section>
+
+
+<!-- ================= EXPLORE DESTINATIONS ================= -->
+
+<section class="explore section" id="explore">
+
+    <div class="section-heading">
+
+        <div>
+            <p class="eyebrow">THE WORLD IS YOURS</p>
+
+            <h2>
+                Explore dream <em>destinations.</em>
+            </h2>
+
+            <p>
+                From mountain escapes to tropical coastlines,
+                find your next somewhere.
+            </p>
+        </div>
+
+        <a href="destination.html" class="text-link">
+            View All Destinations ↗
+        </a>
+
+    </div>
+
+
+    <div class="destination-grid">
+
+        <article class="destination-card">
+
+            <div class="destination-image">
+                <img
+                    src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=85"
+                    alt="Tropical beach in Goa"
+                    loading="lazy">
+
+                <span class="image-tag">BEACH ESCAPE</span>
+            </div>
+
+            <div class="destination-info">
+                <div>
+                    <h3>Goa</h3>
+                    <p>Coastlines & sunsets</p>
+                </div>
+
+                <a class="round-btn"
+                   href="trip_planner.html?destination=Goa"
+                   aria-label="Plan a trip to Goa">↗</a>
+            </div>
+
+        </article>
+
+
+        <article class="destination-card">
+
+            <div class="destination-image">
+                <img
+                    src="https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?auto=format&fit=crop&w=900&q=85"
+                    alt="Himalayan mountains near Manali"
+                    loading="lazy">
+
+                <span class="image-tag">MOUNTAIN AIR</span>
+            </div>
+
+            <div class="destination-info">
+                <div>
+                    <h3>Manali</h3>
+                    <p>Mountains & adventure</p>
+                </div>
+
+                <a class="round-btn"
+                   href="trip_planner.html?destination=Manali"
+                   aria-label="Plan a trip to Manali">↗</a>
+            </div>
+
+        </article>
+
+
+        <article class="destination-card">
+
+            <div class="destination-image">
+                <img
+                    src="https://images.unsplash.com/photo-1599661046827-dacff0c0f09a?auto=format&fit=crop&w=900&q=85"
+                    alt="Historic architecture in Jaipur"
+                    loading="lazy">
+
+                <span class="image-tag">CULTURE & COLOUR</span>
+            </div>
+
+            <div class="destination-info">
+                <div>
+                    <h3>Jaipur</h3>
+                    <p>Heritage & local culture</p>
+                </div>
+
+                <a class="round-btn"
+                   href="trip_planner.html?destination=Jaipur"
+                   aria-label="Plan a trip to Jaipur">↗</a>
+            </div>
+
+        </article>
+
+
+        <article class="destination-card">
+
+            <div class="destination-image">
+                <img
+                    src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85"
+                    alt="Lush green Kerala landscape"
+                    loading="lazy">
+
+                <span class="image-tag">GREEN GETAWAY</span>
+            </div>
+
+            <div class="destination-info">
+                <div>
+                    <h3>Kerala</h3>
+                    <p>Waterways & greenery</p>
+                </div>
+
+                <a class="round-btn"
+                   href="trip_planner.html?destination=Kerala"
+                   aria-label="Plan a trip to Kerala">↗</a>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= TRIP PLANNER ================= -->
+
+<section class="planner" id="planner">
+
+    <div class="planner-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=85"
+            alt="Beautiful mountain lake landscape"
+            loading="lazy">
+
+        <div class="image-quote">
+            The journey<br>
+            is the <em>destination.</em>
+        </div>
+
+    </div>
+
+
+    <div class="planner-content">
+
+        <p class="eyebrow">YOUR ADVENTURE, YOUR RULES</p>
+
+        <h2>
+            Design your<br>
+            <em>dream trip.</em>
+        </h2>
+
+        <p>
+            Choose your destination, set your budget, and tell us
+            what you love. Start planning your next adventure.
+        </p>
+
+        <form id="tripForm">
+
+            <label for="destination">Destination</label>
+
+            <input
+                id="destination"
+                name="destination"
+                placeholder="e.g. Goa"
+                required>
+
+
+            <div class="form-row">
+
+                <div>
+                    <label for="days">Duration</label>
+
+                    <select id="days" name="days">
+                        <option value="1">1 day</option>
+                        <option value="2">2 days</option>
+                        <option value="3" selected>3 days</option>
+                        <option value="4">4 days</option>
+                        <option value="5">5 days</option>
+                        <option value="7">7 days</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="budget">Budget (₹)</label>
+
+                    <input
+                        id="budget"
+                        name="budget"
+                        type="number"
+                        min="500"
+                        max="10000000"
+                        value="5000"
+                        required>
+                </div>
+
+            </div>
+
+
+            <label for="interest">Your Travel Vibe</label>
+
+            <select id="interest" name="interest">
+                <option>Nature</option>
+                <option>Adventure</option>
+                <option>Food & Culture</option>
+                <option>Beaches</option>
+                <option>Relaxation</option>
+            </select>
+
+
+            <button class="primary-btn form-btn" type="submit">
+                Create My Itinerary ↗
+            </button>
+
+        </form>
+
+        <div id="result" class="result" aria-live="polite"></div>
+
+        <p class="planner-more">
+            Want to save your itinerary and manage your trips?
+            <a href="register.html">Create a free account ↗</a>
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= USER FEATURES ================= -->
+
+<section class="user-features section">
+
+    <div class="section-heading">
+        <div>
+            <p class="eyebrow">YOUR PERSONAL TRAVEL SPACE</p>
+            <h2>Everything in <em>one place.</em></h2>
+            <p>Plan, organize, and manage your travel experiences.</p>
+        </div>
+    </div>
+
+
+    <div class="destination-grid">
+
+        <article class="destination-card service-card">
+            <div class="service-icon">▦</div>
+            <div class="service-info">
+                <h3>My Dashboard</h3>
+                <p>View your profile, travel preferences, and saved plans.</p>
+                <a href="dashboard.html" class="text-link">Open Dashboard ↗</a>
+            </div>
+        </article>
+
+        <article class="destination-card service-card">
+            <div class="service-icon">✈</div>
+            <div class="service-info">
+                <h3>My Trips</h3>
+                <p>Keep upcoming journeys and saved itineraries organized.</p>
+                <a href="my_trips.html" class="text-link">View My Trips ↗</a>
+            </div>
+        </article>
+
+        <article class="destination-card service-card">
+            <div class="service-icon">⌂</div>
+            <div class="service-info">
+                <h3>Hotels & Nearby Spots</h3>
+                <p>Explore accommodation and attractions that suit your budget.</p>
+                <a href="hotels.html" class="text-link">Explore Stays ↗</a>
+            </div>
+        </article>
+
+        <article class="destination-card service-card">
+            <div class="service-icon">✧</div>
+            <div class="service-info">
+                <h3>AI Travel Tutor</h3>
+                <p>Get travel ideas, packing suggestions, and itinerary guidance.</p>
+                <a href="ai_tutor.html" class="text-link">Ask the Tutor ↗</a>
+            </div>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section class="how section" id="about">
+
+    <div class="section-heading centered">
+
+        <p class="eyebrow">YOUR TRIP, SIMPLIFIED</p>
+
+        <h2>
+            Three steps. <em>One great story.</em>
+        </h2>
+
+        <p>
+            Less stress, more discovery. Your adventure starts here.
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+        <article>
+            <span class="step-number">01</span>
+            <div class="step-icon">⌖</div>
+            <h3>Choose Your Place</h3>
+            <p>Find a destination that matches your mood and interests.</p>
+        </article>
+
+        <article>
+            <span class="step-number">02</span>
+            <div class="step-icon">✧</div>
+            <h3>Make It Personal</h3>
+            <p>Set your duration and budget to shape your travel plan.</p>
+        </article>
+
+        <article>
+            <span class="step-number">03</span>
+            <div class="step-icon">↗</div>
+            <h3>Go Make Memories</h3>
+            <p>Review your itinerary and get ready to explore.</p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ADMIN SECTION ================= -->
+
+<section class="admin-promo">
+
+    <div>
+        <p class="eyebrow">FOR THE GLOBETROTTER TEAM</p>
+        <h2>Manage the travel experience.</h2>
+        <p>
+            Authorized administrators can manage destinations,
+            review platform activity, and maintain website content.
+        </p>
+    </div>
+
+    <a href="admin.html" class="admin-link">
+        Admin Portal ↗
+    </a>
+
+</section>
+
+
+<!-- ================= CLOSING CTA ================= -->
+
+<section class="closing">
+
+    <p class="eyebrow">THE WORLD WON'T EXPLORE ITSELF</p>
+
+    <h2>
+        Your next story<br>
+        starts <em>somewhere.</em>
+    </h2>
+
+    <a href="register.html" class="light-btn">
+        Create Your Account ↗
+    </a>
+
+    <p class="closing-login">
+        Already registered?
+        <a href="login.html">Log in here</a>
+    </p>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-about">
+            <a href="index.html" class="logo footer-logo">
+                ✦ Globe<span>Trotter</span>
+            </a>
+
+            <p>
+                Explore more. Plan better.<br>
+                Make every journey count.
+            </p>
+
+            <p class="footer-tagline">
+                Made for the curious.
+            </p>
+        </div>
+
+
+        <div>
+            <h4>EXPLORE</h4>
+            <a href="index.html">Home</a>
+            <a href="destination.html">Destinations</a>
+            <a href="trip_planner.html">Trip Planner</a>
+            <a href="hotels.html">Hotels & Nearby Spots</a>
+        </div>
+
+
+        <div>
+            <h4>YOUR ACCOUNT</h4>
+            <a href="login.html">Log In</a>
+            <a href="register.html">Register</a>
+            <a href="dashboard.html">User Dashboard</a>
+            <a href="my_trips.html">My Trips</a>
+        </div>
+
+
+        <div>
+            <h4>MORE</h4>
+            <a href="ai_tutor.html">AI Travel Tutor</a>
+            <a href="contact.html">Get in Touch</a>
+            <a href="admin.html">Admin Portal</a>
+            <a href="contact.html#faq">FAQs</a>
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © <span id="year">2026</span> GlobeTrotter · Buildathon Project
+        </span>
+
+        <div>
+            <a href="contact.html">Contact</a>
+            <span> · </span>
+            <a href="#home">Back to Top ↑</a>
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+    // Update the copyright year automatically.
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
